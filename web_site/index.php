@@ -6,13 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Descrição do meu website">
     <meta name="keywords" content="Palavras-chave,do,site">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!--GoogleFonts-->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!--GoogleFonts-->
+    <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script> <!--FontAwosome-->
+    <link rel="stylesheet" href="css/style.css"/>
     <title>Web Site</title>
 </head>
 <body>
     <header> 
-        <div class="center">
-            <div class="logo"> Logomarca </div>
-            <nav class="desktop">
+        <div class="center"> <!--center-->
+            <div class="logo left"> Logomarca </div>
+            <nav class="desktop right">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Sobre</a></li>
@@ -20,7 +25,7 @@
                     <li><a href="">Contatos</a></li>
                 </ul>
             </nav>
-            <nav class="mobile">
+            <nav class="mobile right">
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Sobre</a></li>
@@ -28,7 +33,8 @@
                     <li><a href="">Contatos</a></li>
                 </ul>
             </nav>
-        </div><!--center-->
+        <div class="clear"></div>
+        </div>
     </header>
 
     <section class="banner-principal">
@@ -41,9 +47,9 @@
         </div>
     </section>
 
-    <section class="descricao-autor"> 
-        <div class="center">
-        <div class="w50">   <!--w50-->
+    <section class="descricao-autor">  
+        <div class="center"> <!--center-->
+        <div class="w50 left">   <!--w50-->
             <h2>Nome Autor</h2>
             <p>It is a long established fact that a reader will be distracted by 
             the readable content of a page when looking at its layout. The 
@@ -56,17 +62,18 @@
             years, sometimes by accident, sometimes on purpose (injected humour and
             the like).</p>
         </div>
-        <div class="w50">   <!--w50-->
+        <div class="w50 left">   <!--w50-->
             <img src="img/autor.jpg">
         </div>
-        </div><!--center-->
+        <div class="clear"></div>
+        </div>
     </section>
 
     <section class="especialidades">
-        <div class="center">
+        <div class="center"> <!--center-->
         <h2 class="title">Especialidades</h2>
-            <div class="box-especialidade">
-                <h3>icone1</h3>
+            <div class="w33 left box-especialidade">
+                <h3><i class="fa-brands fa-css3-alt"></i></h3>
                 <h3>Icone CSS3</h3>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -78,8 +85,8 @@
                     officia deserunt mollit anim id est laborum."
                 </p>
             </div>
-            <div class="box-especialidade">
-                <h3>icone2</h3>
+            <div class="w33 left box-especialidade">
+                <h3><i class="fa-brands fa-html5"></i></h3>
                 <h3>Icone HTML5</h3>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -91,8 +98,8 @@
                     officia deserunt mollit anim id est laborum."
                 </p>
             </div>
-            <div class="box-especialidade">
-                <h3>icone3</h3>
+            <div class="w33 left box-especialidade">
+                <h3><i class="fa-brands fa-square-js"></i></h3>
                 <h3>Icone JavaScript</h3>
                 <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
                      sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -104,12 +111,12 @@
                     officia deserunt mollit anim id est laborum."
                 </p>
             </div>
-        </div> <!--center-->
+        </div> 
     </section>
 
     <section class="extras">
         <div class="center">
-            <div class="w50">
+            <div class="w50 left">
             <h2 class="title">Depoimentos</h2>
                 <div class="depoimentos-single">
                     <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -148,7 +155,7 @@
                     <p class="nome-autor">Lorem Ipsum</p>
                 </div>
             </div>
-            <div class="w50">
+            <div class="w50 left"> <!--w50-->
             <h2 class="title">Serviços</h2>
                 <div class="servicos">
                     <ul>
@@ -158,11 +165,13 @@
                     </ul>
                 </div>
             </div>
+            <div class="cleear"></div>
         </div>
     </section>
 
-    <footer class="center">
+    <footer class="center"> <!--center-->
         <p>Todos os direitos reservados</p>
     </footer>
+
 </body>
 </html>
