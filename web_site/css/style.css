@@ -6,6 +6,11 @@
 }
 
 /**Boot CSS**/
+img{
+    width: 100%;
+    max-width: 500px;
+}
+
 .center{
     max-width: 1280px;
     padding: 0 2%;
@@ -17,6 +22,7 @@
 }
 
 .w50{
+    padding: 0 10px;
     width: 50%;
 }
 
@@ -66,4 +72,133 @@ nav.desktop li{
 nav.desktop a{
     color: white;
     text-decoration: none;
+}
+
+section.banner-principal{
+    width: 100%;
+    height: 600px;
+    background-image: url('../img/trabalho.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgb(51, 51, 51, 0.6) ; /**opacidade**/
+}
+
+section.banner-principal form{
+    width: 93%;
+    max-width: 600px;
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+section.banner-principal form h2{
+    color: white;
+    font-weight: 300;
+    font-size: 30px;
+    text-align: center;
+}
+
+section.banner-principal form input[type=email]{
+    width: 100%;
+    height: 66px;
+    margin-top: 10px;
+    background: white;
+    color: #333;
+    font-size: 22px;
+    padding-left: 10px;
+}
+
+section.banner-principal form input[type=submit]{
+    width: 100%;
+    height: 66px;
+    margin-top: 10px;
+    background: #00c59e;
+    color: white;
+    cursor: pointer;
+    font-size: 22px;
+    border: 0;
+}
+
+section.descricao-autor{
+    padding: 30px 0;
+}
+
+section.descricao-autor h2{
+    font-size: 28px;
+    font-weight: 400;
+    color: #444;
+}
+
+section.descricao-autor p{
+    font-size: 16px;
+    color: #444;
+    margin-top:10px;
+}
+
+/**Responsivel**/
+@media screen and (max-width: 700px) {
+    nav.desktop{
+        display: none;
+    }
+
+    nav.mobile{
+        display: block;
+    }  
+
+    .botao-menu-mobile{
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+
+    nav.mobile ul{
+        top: 55px;
+        z-index: 3;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        display: none;
+        text-align: center;
+    }
+
+    nav.mobile li{
+        font-weight: 300;
+        width: 100%;
+        display: block;
+        background: white;
+        border-bottom: 1px solid #ccc;
+        font-size: 17px;
+        padding: 8px 0;
+    }
+
+    nav.mobile li a{
+        display: block;
+        color: #444;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 768px){
+    img{
+        float: none !important;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .w50{
+        width: 100%;
+        padding: 20px;
+    }
 }

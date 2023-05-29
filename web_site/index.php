@@ -26,6 +26,9 @@
                 </ul>
             </nav>
             <nav class="mobile right">
+                <div class="botao-menu-mobile">
+                <i class="fa-solid fa-bars"></i>
+                </div>
                 <ul>
                     <li><a href="">Home</a></li>
                     <li><a href="">Sobre</a></li>
@@ -38,32 +41,34 @@
     </header>
 
     <section class="banner-principal">
-        <div class="center"><!--center-->
-            <form>
-                <h2>Qual o seu email:</h2>
-                <input type="email" name="email" required/> 
-                <input type="submit" name="acao" value="Cadastrar">
-            </form>
-        </div>
+        <div class="overlay">
+            <div class="center"><!--center-->
+                <form>
+                    <h2>Qual o seu email ?</h2>
+                    <input type="email" name="email" required/> 
+                    <input type="submit" name="acao" value="Cadastrar">
+                </form>
+            </div>
+        </div> 
     </section>
 
     <section class="descricao-autor">  
         <div class="center"> <!--center-->
+            <div class="w50 left">   <!--w50-->
+                <h2>Nome Autor</h2>
+                <p>It is a long established fact that a reader will be distracted by 
+                the readable content of a page when looking at its layout. The 
+                point of using Lorem Ipsum is that it has a more-or-less normal 
+                distribution of letters, as opposed to using 'Content here, 
+                content here', making it look like readable English. Many desktop 
+                publishing packages and web page editors now use Lorem Ipsum as their 
+                default model text, and a search for 'lorem ipsum' will uncover many web
+                sites still in their infancy. Various versions have evolved over the
+                years, sometimes by accident, sometimes on purpose (injected humour and
+                the like).</p>
+            </div>
         <div class="w50 left">   <!--w50-->
-            <h2>Nome Autor</h2>
-            <p>It is a long established fact that a reader will be distracted by 
-            the readable content of a page when looking at its layout. The 
-            point of using Lorem Ipsum is that it has a more-or-less normal 
-            distribution of letters, as opposed to using 'Content here, 
-            content here', making it look like readable English. Many desktop 
-            publishing packages and web page editors now use Lorem Ipsum as their 
-            default model text, and a search for 'lorem ipsum' will uncover many web
-            sites still in their infancy. Various versions have evolved over the
-            years, sometimes by accident, sometimes on purpose (injected humour and
-            the like).</p>
-        </div>
-        <div class="w50 left">   <!--w50-->
-            <img src="img/autor.jpg">
+            <img class="right" src="img/autor.jpg">
         </div>
         <div class="clear"></div>
         </div>
