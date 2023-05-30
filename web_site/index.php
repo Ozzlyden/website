@@ -9,14 +9,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--GoogleFonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!--GoogleFonts-->
-    <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script> <!--FontAwosome-->
     <link rel="stylesheet" href="css/style.css"/>
     <title>Web Site</title>
 </head>
 <body>
     <header> 
         <div class="center"> <!--center-->
-            <div class="logo left"> Logomarca </div>
+            <div class="logo left"> <a href="/web_site"> Logomarca</a> </div>
             <nav class="desktop right">
                 <ul>
                     <li><a href="">Home</a></li>
@@ -172,6 +171,11 @@
         <p>Todos os direitos reservados</p>
         </div>
     </footer>
+
+<script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script> <!--FontAwosome-->
+<script src="../web_site/js/jquery.js"></script>
+<script src="../web_site/js/scripts.js"></script>
+
 
 </body>
 </html>

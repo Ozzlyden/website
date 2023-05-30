@@ -52,6 +52,11 @@ header .logo{
     color: white;
 }
 
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
 .mobile{
     display: none;
 }
@@ -73,6 +78,10 @@ nav.desktop li{
 nav.desktop a{
     color: white;
     text-decoration: none;
+}
+
+nav.desktop a:hover{
+    text-decoration: underline;
 }
 
 section.banner-principal{
@@ -256,7 +265,6 @@ footer p{
     .w33{
         width: 100%;
         padding: 20px;
-
     }
     
     .box-especialidade{
