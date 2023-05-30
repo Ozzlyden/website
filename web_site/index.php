@@ -1,3 +1,5 @@
+<?php include('config.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--GoogleFonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!--GoogleFonts-->
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>css/style.css"/>
     <title>Web Site</title>
 </head>
 <body>
@@ -18,10 +20,10 @@
             <div class="logo left"> <a href="/web_site"> Logomarca</a> </div>
             <nav class="desktop right">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Serviços</a></li>
-                    <li><a href="">Contatos</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Sobre</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Serviços</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Contatos</a></li>
                 </ul>
             </nav>
             <nav class="mobile right">
@@ -29,10 +31,10 @@
                 <i class="fa-solid fa-bars"></i>
                 </div>
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">Sobre</a></li>
-                    <li><a href="">Serviços</a></li>
-                    <li><a href="">Contatos</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Sobre</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Serviços</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>">Contatos</a></li>
                 </ul>
             </nav>
         <div class="clear"></div>
@@ -173,8 +175,8 @@
     </footer>
 
 <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script> <!--FontAwosome-->
-<script src="../web_site/js/jquery.js"></script>
-<script src="../web_site/js/scripts.js"></script>
+<script src="<?php echo INCLUDE_PATH; ?>../web_site/js/jquery.js"></script>
+<script src="<?php echo INCLUDE_PATH; ?>../web_site/js/scripts.js"></script>
 
 
 </body>
