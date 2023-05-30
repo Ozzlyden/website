@@ -249,6 +249,25 @@ footer p{
     font-size: 16px;
 }
 
+section.erro-404{
+    min-height: 900px;
+    padding: 30px 0;
+}
+
+section.erro-404 h2{
+    text-align: center;
+    color: #444;
+    font-weight: 400;
+    border-top: 2px solid #444;
+}
+
+section.erro-404 p{
+    text-align: center;
+    color: #444;
+    font-weight: 400;
+    border-top: 2px solid #444;
+}
+
 /**Responsivel**/
 @media screen and (max-width: 768px){
     img{
