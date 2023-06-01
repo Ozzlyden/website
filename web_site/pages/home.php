@@ -80,7 +80,7 @@
 
     <section class="extras">
         <div class="center">
-            <div class="w50 left depoimentos-container">
+            <div id="depoimentos" class="w50 left depoimentos-container">
             <h2 class="title">Depoimentos dos nossos clientes</h2>
                 <div class="depoimentos-single">
                     <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -111,7 +111,7 @@
                     <p class="nome-autor">Nome Cliente</p>
                 </div>
             </div>
-            <div class="w50 left servicos-container"> <!--w50-->
+            <div id="servicos" class="w50 left servicos-container"> <!--w50-->
             <h2 class="title">Serviços</h2>
                 <div class="servicos">
                     <ul>
