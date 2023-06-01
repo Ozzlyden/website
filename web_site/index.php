@@ -15,15 +15,31 @@
     <title>Web Site</title>
 </head>
 <body>
+
+    <?php
+        // isset eh uma função do PHP que verifica se uma variável está definida e não é nula
+        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
+
+        switch($url){
+            case 'sobre':
+                echo '<target target="sobre" />';
+                break;
+            
+            case 'servico':
+                echo '<target target="servico" />';
+                break;
+        }
+    ?>
+
     <header> 
         <div class="center"> <!--center-->
             <div class="logo left"> <a href="/web_site"> Logomarca</a> </div>
             <nav class="desktop right">
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Sobre</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Contatos</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>sobre">Sobre</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
             <nav class="mobile right">
@@ -32,9 +48,9 @@
                 </div>
                 <ul>
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Sobre</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>">Contatos</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>sobre">Sobre</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
+                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
         <div class="clear"></div>
@@ -43,14 +59,16 @@
 
     <!--Recolocando trecho do codigo em outro arquivo-->
     <?php
-        // isset eh uma função do PHP que verifica se uma variável está definida e não é nula
-        $url = isset($_GET['url']) ? $_GET['url'] : 'home';
-        
         if(file_exists('pages/'.$url.'.php')){
             include('pages/'.$url.'.php');
         }else{
-            // pagina nao existe, colocar erro
+
+            if($url != 'sobre' && $url != 'servicos'){
+                // pagina nao existe, colocar erro
             include('pages/404.php');
+            }else{
+                include('pages/home.php');
+            }   
         }
     ?>
 
@@ -64,6 +82,14 @@
 <script src="<?php echo INCLUDE_PATH; ?>../web_site/js/jquery.js"></script>
 <script src="<?php echo INCLUDE_PATH; ?>../web_site/js/scripts.js"></script>
 
+<!--Caso vai para a contato.php-->
+<?php
+    if ($url == 'contato'){
+?>
+<script defer src="<?php echo INCLUDE_PATH; ?>../web_site/js/scripts.js"></script>
+<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpAcgusc3k56lIsOs9LWU37pkTXLpmT60&callback=Function.prototype'></script> <!--Minha Chave-->
+<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4&callback=Function.prototype'></script> <!--Professor Chave-->
+<?php } ?>
 
-</body>
+</body> 
 </html>
