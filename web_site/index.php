@@ -82,6 +82,12 @@
 <script src="<?php echo INCLUDE_PATH; ?>../web_site/js/jquery.js"></script>
 <script src="<?php echo INCLUDE_PATH; ?>../web_site/js/scripts.js"></script>
 
+<?php
+    if ($url == 'home' || $url == ''){
+?>
+<script src="<?php echo INCLUDE_PATH; ?>../web_site/js/slider.js"></script>
+<?php } ?>
+
 <!--Caso vai para a contato.php-->
 <?php
     if ($url == 'contato'){
