@@ -94,7 +94,7 @@
 ?>
 <script defer src="<?php echo INCLUDE_PATH; ?>../web_site/js/scripts.js"></script>
 <!--<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpAcgusc3k56lIsOs9LWU37pkTXLpmT60&callback=Function.prototype'></script> <!--Minha Chave-->
-<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyDHPNQxozOzQSZ-djvWGOBUsHkBUoT_qH4&callback=Function.prototype'></script> <!--Professor Chave-->
+<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpAcgusc3k56lIsOs9LWU37pkTXLpmT60&callback=Function.prototype'></script> <!--Professor Chave-->
 <?php } ?>
 
 </body> 

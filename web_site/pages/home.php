@@ -11,6 +11,10 @@
                 </form>
             </div>
         </div> 
+    <div class="bullets">
+        
+    </div>
+    
 </section>
 
     <section class="descricao-autor">  
