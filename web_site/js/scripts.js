@@ -129,7 +129,7 @@ $(function(){
 	}
 
 
-
+	// Navegacao sem atualizacao
 	carregarDinamico();
 	function carregarDinamico(){
 		$('[realtime]').click(function(){
@@ -149,5 +149,6 @@ $(function(){
 			return false;
 		})
 	}
+
 
 })

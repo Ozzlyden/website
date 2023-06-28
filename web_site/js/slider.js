@@ -31,7 +31,7 @@ $(function(){
             if(curSlide > maxSlide){
                 curSlide = 0;
             }
-            $('.banner-single').eq(curSlide).fadeIn(2000);
+            $('.banner-single').eq(curSlide).stop().fadeIn(2000);
             // trocando bullets
             $('.bullets span').removeClass('active-slider');
             $('.bullets span').eq(curSlide).addClass('active-slider');

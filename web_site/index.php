@@ -15,6 +15,7 @@
     <title>Web Site</title>
 </head>
 <body>
+<base base="<?php echo INCLUDE_PATH; ?>" />
 
     <?php
         // isset eh uma função do PHP que verifica se uma variável está definida e não é nula
@@ -39,7 +40,7 @@
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+                    <li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
             <nav class="mobile right">
@@ -50,13 +51,14 @@
                     <li><a href="<?php echo INCLUDE_PATH; ?>">Home</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>depoimentos">Depoimentos</a></li>
                     <li><a href="<?php echo INCLUDE_PATH; ?>servicos">Serviços</a></li>
-                    <li><a href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
+                    <li><a realtime="contato" href="<?php echo INCLUDE_PATH; ?>contato">Contato</a></li>
                 </ul>
             </nav>
         <div class="clear"></div>
         </div>
     </header>
-
+    
+    <div class="container-principal">
     <!--Recolocando trecho do codigo em outro arquivo-->
     <?php
         if(file_exists('pages/'.$url.'.php')){
@@ -71,6 +73,7 @@
             }   
         }
     ?>
+    </div>
 
     <footer>
         <div class="center"> <!--center-->
