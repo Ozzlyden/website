@@ -3,9 +3,13 @@
         if ($class == 'Email'){
             include('classes/phpmailer/PHPMailerAutoLoad.php');
         }
-        if($class == 'carbon'){
-            include('classes/carbon.php');
+        if($class == 'Carbon'){
+            include('carbon/vendor/autoload.php');
         }
+        if($class == 'Correios'){
+            include('correios/vendor/autoload.php');
+        }
+
         include('classes/'.$class.'.php');
     };
 
