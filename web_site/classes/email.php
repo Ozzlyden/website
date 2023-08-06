@@ -23,6 +23,7 @@
     
             }
             
+            // Email que vai disparar
             public function addAdress($email,$nome){
                 $this->mailer->addAddress($email,$nome);
             }

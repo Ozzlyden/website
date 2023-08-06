@@ -7,19 +7,22 @@
 
             <?php
                 // Verificacao de envio de email
-                if (isset($_POST['acao'])){
+                if (isset($_POST['acao']) && $_POST['identificador'] = 'form_home'){
                     // formulario enviado
                     if($_POST['email'] != ''){
                         $email = $_POST['email'];
 
+                        //Verificacao caso email valido
                         if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                            // Informacoes de disparo
                             $mail = new Email('valente-victor@hotmail.com', 'ozzly.den@gmail.com', 'senha123', 'Victor');
                             $mail->addAdress('valente-victor@hotmail.com', 'Victor');
-                            $corpo =  "Email cadastrado<hr>$email";
+                            $corpo =  "Novo email cadastrado na home do site<hr>$email";
                             $info = array('assunto'=>'Asssunto Test', 'corpo'=>$corpo);
-                            //$info = ['assunto'=>'Asssunto Test', 'corpo'=>$email];;
+                            //$info = ['assunto'=>'Asssunto Test', 'corpo'=>$email];
                             $mail->formatarEmail($info);
 
+                            // Verificacao de envio
                             if($mail->enviarEmail()){
                                 echo '<script> alert("Email enviado com sucesso")</script>';
                             }else{
@@ -31,13 +34,40 @@
                         }
                     }else{
                         echo '<script> alert("Campo vazio nao permitido") </script>';
-                    }            
+                    } 
+                //Varificacao do contato.php           
+                }else if(isset($_POST['acao']) && $_POST['identificador'] = 'form_contato'){
+                    $nome = $_POST['nome'];
+                    $email = $_POST['email'];
+                    $mensagem = $_POST['mensagem'];
+                    $telefone = $_POST['telefone'];
+                    $assunto = 'Nova mensagem de contato';
+                    $corpo = '';
+
+                    foreach($_POST as $key => $vaule){
+                        $corpo.=ucfirst($key).":".$value;  
+                        $corpo.="<hr>";
+                    }
+
+                    // Informacoes de disparo
+                    $info = array('assunto'=>$assunto, 'corpo'=>$corpo);
+                    $mail = new Email('valente-victor@hotmail.com', 'ozzly.den@gmail.com', 'senha123', 'Victor');
+                    $mail->addAdress('valente-victor@hotmail.com', 'Victor');
+                    $mail->formatarEmail($info);
+
+                    // Verificacao de envio
+                    if($mail->enviarEmail()){
+                        echo '<script> alert("Email enviado com sucesso")</script>';
+                    }else{
+                        echo '<script> alert("Erro ao enviar email")</script>';
+                    }
                 }
             ?>
 
                 <form method="post">
                     <h2>Qual o seu email ?</h2>
                     <input type="email" name="email" required/> 
+                    <input type="hidden" name="identificador" value="form_home"/>
                     <input type="submit" name="acao" value="Cadastrar">
                 </form>
             </div>
