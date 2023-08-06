@@ -4,7 +4,38 @@
     <div style="background-image: url('<?php echo INCLUDE_PATH; ?>../web_site/img/work2.jpg');" class="banner-single"></div> 
         <div class="overlay">
             <div class="center"><!--center-->
-                <form>
+
+            <?php
+                // Verificacao de envio de email
+                if (isset($_POST['acao'])){
+                    // formulario enviado
+                    if($_POST['email'] != ''){
+                        $email = $_POST['email'];
+
+                        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+                            $mail = new Email('valente-victor@hotmail.com', 'ozzly.den@gmail.com', 'senha123', 'Victor');
+                            $mail->addAdress('valente-victor@hotmail.com', 'Victor');
+                            $corpo =  "Email cadastrado<hr>$email";
+                            $info = array('assunto'=>'Asssunto Test', 'corpo'=>$corpo);
+                            //$info = ['assunto'=>'Asssunto Test', 'corpo'=>$email];;
+                            $mail->formatarEmail($info);
+
+                            if($mail->enviarEmail()){
+                                echo '<script> alert("Email enviado com sucesso")</script>';
+                            }else{
+                                echo '<script> alert("Erro ao enviar email")</script>';
+                            }
+
+                        }else{
+                                echo '<script> alert("Email invalido") </script>';
+                        }
+                    }else{
+                        echo '<script> alert("Campo vazio nao permitido") </script>';
+                    }            
+                }
+            ?>
+
+                <form method="post">
                     <h2>Qual o seu email ?</h2>
                     <input type="email" name="email" required/> 
                     <input type="submit" name="acao" value="Cadastrar">

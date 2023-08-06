@@ -32,8 +32,6 @@
         }
     ?>
 
-    <?php new Email(); ?>    <!--Chamando o email.php-->
-
     <header> 
         <div class="center"> <!--center-->
             <div class="logo left"> <a href="/web_site"> Logomarca</a> </div>

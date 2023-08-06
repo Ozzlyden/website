@@ -1,7 +1,9 @@
 <?php
+    // CLASS PARA DAR IMPORT NAS BIBLIOTECAS
+
     $autoload = function($class){
         if ($class == 'Email'){
-            include('classes/phpmailer/PHPMailerAutoLoad.php');
+            require_once('classes/phpmailer/vendor/autoload.php');  // chama o arquivo somente uma vez
         }
         if($class == 'Carbon'){
             include('carbon/vendor/autoload.php');
