@@ -4,66 +4,6 @@
     <div style="background-image: url('<?php echo INCLUDE_PATH; ?>../web_site/img/work2.jpg');" class="banner-single"></div> 
         <div class="overlay">
             <div class="center"><!--center-->
-
-            <?php
-                // Verificacao de envio de email
-                if (isset($_POST['acao']) && $_POST['identificador'] = 'form_home'){
-                    // formulario enviado
-                    if($_POST['email'] != ''){
-                        $email = $_POST['email'];
-
-                        //Verificacao caso email valido
-                        if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
-                            // Informacoes de disparo
-                            $mail = new Email('valente-victor@hotmail.com', 'ozzly.den@gmail.com', 'senha123', 'Victor');
-                            $mail->addAdress('valente-victor@hotmail.com', 'Victor');
-                            $corpo =  "Novo email cadastrado na home do site<hr>$email";
-                            $info = array('assunto'=>'Asssunto Test', 'corpo'=>$corpo);
-                            //$info = ['assunto'=>'Asssunto Test', 'corpo'=>$email];
-                            $mail->formatarEmail($info);
-
-                            // Verificacao de envio
-                            if($mail->enviarEmail()){
-                                echo '<script> alert("Email enviado com sucesso")</script>';
-                            }else{
-                                echo '<script> alert("Erro ao enviar email")</script>';
-                            }
-
-                        }else{
-                                echo '<script> alert("Email invalido") </script>';
-                        }
-                    }else{
-                        echo '<script> alert("Campo vazio nao permitido") </script>';
-                    } 
-                //Varificacao do contato.php           
-                }else if(isset($_POST['acao']) && $_POST['identificador'] = 'form_contato'){
-                    $nome = $_POST['nome'];
-                    $email = $_POST['email'];
-                    $mensagem = $_POST['mensagem'];
-                    $telefone = $_POST['telefone'];
-                    $assunto = 'Nova mensagem de contato';
-                    $corpo = '';
-
-                    foreach($_POST as $key => $vaule){
-                        $corpo.=ucfirst($key).":".$value;  
-                        $corpo.="<hr>";
-                    }
-
-                    // Informacoes de disparo
-                    $info = array('assunto'=>$assunto, 'corpo'=>$corpo);
-                    $mail = new Email('valente-victor@hotmail.com', 'ozzly.den@gmail.com', 'senha123', 'Victor');
-                    $mail->addAdress('valente-victor@hotmail.com', 'Victor');
-                    $mail->formatarEmail($info);
-
-                    // Verificacao de envio
-                    if($mail->enviarEmail()){
-                        echo '<script> alert("Email enviado com sucesso")</script>';
-                    }else{
-                        echo '<script> alert("Erro ao enviar email")</script>';
-                    }
-                }
-            ?>
-
                 <form method="post">
                     <h2>Qual o seu email ?</h2>
                     <input type="email" name="email" required/> 
@@ -73,14 +13,13 @@
             </div>
         </div> 
     <div class="bullets">
-        
-    </div>
+    </div> <!--bullets -->
     
-</section>
+</section> <!--banner-->
 
     <section class="descricao-autor">  
-        <div class="center"> <!--center-->
-            <div class="w50 left">   <!--w50-->
+        <div class="center">
+            <div class="w50 left"> 
                 <h2>Nome Autor</h2>
                 <p>It is a long established fact that a reader will be distracted by 
                 the readable content of a page when looking at its layout. The 
@@ -92,16 +31,16 @@
                 sites still in their infancy. Various versions have evolved over the
                 years, sometimes by accident, sometimes on purpose (injected humour and
                 the like).</p>
-            </div>
-        <div class="w50 left">   <!--w50-->
+            </div> <!--w50-->
+        <div class="w50 left">
             <img class="right" src="img/autor.jpg">
-        </div>
+        </div><!--w50-->
         <div class="clear"></div>
-        </div>
+        </div><!--center-->
     </section>
 
-    <section class="especialidades">
-        <div class="center"> <!--center-->
+    <section class="especialidades"> 
+        <div class="center"> 
         <h2 class="title">Especialidades</h2>
             <div class="w33 left box-especialidade">
                 <h3><i class="fa-brands fa-css3-alt"></i></h3>
@@ -143,7 +82,7 @@
                 </p>
             </div>
         <div class="clear"></div>
-        </div> 
+        </div> <!--center-->
     </section>
 
     <section class="extras">
@@ -179,7 +118,7 @@
                     <p class="nome-autor">Nome Cliente</p>
                 </div>
             </div>
-            <div id="servicos" class="w50 left servicos-container"> <!--w50-->
+            <div id="servicos" class="w50 left servicos-container">
             <h2 class="title">Serviços</h2>
                 <div class="servicos">
                     <ul>
@@ -188,7 +127,7 @@
                         <li>Serviço 3</li>
                     </ul>
                 </div>
-            </div>
+            </div><!--w50-->
             <div class="clear"></div>
-        </div>
+        </div><!--center-->
     </section>

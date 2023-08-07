@@ -33,7 +33,7 @@
     ?>
 
     <header> 
-        <div class="center"> <!--center-->
+        <div class="center"> 
             <div class="logo left"> <a href="/web_site"> Logomarca</a> </div>
             <nav class="desktop right">
                 <ul>
@@ -55,7 +55,7 @@
                 </ul>
             </nav>
         <div class="clear"></div>
-        </div>
+        </div><!--center-->
     </header>
     
     <div class="container-principal">
@@ -76,9 +76,9 @@
     </div>
 
     <footer>
-        <div class="center"> <!--center-->
+        <div class="center"> 
         <p>Todos os direitos reservados</p>
-        </div>
+        </div><!--center-->
     </footer>
 
 <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script> <!--FontAwosome-->
@@ -95,10 +95,13 @@
 <?php
     if ($url == 'contato'){
 ?>
+
+<?php } ?>
+
+<script defer src="<?php echo INCLUDE_PATH; ?>../web_site/js/formularios.js"></script>
 <script defer src="<?php echo INCLUDE_PATH; ?>../web_site/js/scripts.js"></script>
 <!--<script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpAcgusc3k56lIsOs9LWU37pkTXLpmT60&callback=Function.prototype'></script> <!--Minha Chave-->
 <script defer src='https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCpAcgusc3k56lIsOs9LWU37pkTXLpmT60&callback=Function.prototype'></script> <!--Professor Chave-->
-<?php } ?>
 
 </body> 
 </html>
