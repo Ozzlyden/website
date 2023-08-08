@@ -32,6 +32,12 @@
         }
     ?>
 
+    <div class="sucesso">Formulario enviado com sucesso!</div>
+
+    <div class="overlay-loading">
+        <img src="<?php echo INCLUDE_PATH; ?>../web_site/img/ajax-loader.gif"/>
+    </div> <!--overlay-loading-->
+
     <header> 
         <div class="center"> 
             <div class="logo left"> <a href="/web_site"> Logomarca</a> </div>
