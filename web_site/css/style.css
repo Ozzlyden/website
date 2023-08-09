@@ -128,6 +128,7 @@ section.banner-conteiner{
     z-index: 1;
     left: 0;
     top: 0;
+    display: none;
     width: 100%;
     height: 100%;
     background-size: cover;
