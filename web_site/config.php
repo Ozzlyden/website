@@ -19,8 +19,12 @@
 
     spl_autoload_register($autoload);
 
-    // DEFINIR CAMINHOS
+    // DEFINIR CAMINHOS "CONSTANTES"
     define('INCLUDE_PATH', 'http://localhost/web_site/');
     define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
-
+    // Conectar MySql
+    define('HOST', 'localhost');
+    define('USER', 'root');
+    define('PASSWORD', 'as');
+    define('DATABASE','bd_website');
 ?>

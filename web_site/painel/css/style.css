@@ -54,3 +54,13 @@ html,body{
 	color: white;
 	border: 0;
 }
+
+/*BOX ERRO PAINEL*/
+.erro-box{
+	width: 100%;
+	padding: 8px 2%;
+	text-align: center;
+	background: #F75353;
+	color: white;
+	font-size: 15px;
+}
