@@ -19,6 +19,14 @@
 				$password = $_POST['password'];
 				$sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
 				$sql->execute(array($user,$password));
+				//echo '$sql =', $sql;
+
+				$errorInfo = $sql->errorInfo();
+				if ($errorInfo[0] !== '00000') {
+				// Houve um erro na execução da consulta
+				echo 'Erro: ' . $errorInfo[2];
+				}
+
 				if($sql->rowCount() == 1){
 					$info = $sql->fetch();
 					// Login bem sucedido
@@ -42,7 +50,7 @@
 			}
             
         			
-           //$pdo = MySql::conectar();
+           	//$pdo = MySql::conectar();
         ?>
 
         <h2>Faça o seu login:</h2>
