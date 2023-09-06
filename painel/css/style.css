@@ -64,3 +64,38 @@ html,body{
 	color: white;
 	font-size: 15px;
 }
+
+/*PAINEL DE CONTROLE  */
+
+.clear{
+	clear: both;
+}
+
+.center{
+	padding: 0 2%;
+	margin: 0 auto;
+}
+
+.menu{
+	overflow-y: auto;
+	height: 100%;
+	background: #455a64;
+	float: left;
+	width: 300px;
+}
+
+header{
+	padding: 10px 0;
+	background: #78909c;
+	width: calc(100% - 300px);
+	float: left;
+}
+
+.loggout{
+	float: right;
+}
+
+.loggout a{
+	color: white;
+	font-size: 20px;
+}

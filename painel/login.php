@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--GoogleFonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!--GoogleFonts-->
-    <title>Painel de controle</title>
+    <title>Pagina Login</title>
 </head>
 <body>
 
@@ -51,6 +51,8 @@
             <input type="submit" name="acao" value="Conectar">
         </form>
     </div><!--box-login-->
+
+<script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script>
     
 </body>
 </html>
