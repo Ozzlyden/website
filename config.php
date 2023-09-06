@@ -25,6 +25,6 @@
     // Conectar MySql
     define('HOST', 'localhost');
     define('USER', 'root');
-    define('PASSWORD', 'as');
+    define('PASSWORD', '');
     define('DATABASE','bd_website');
 ?>
