@@ -7,10 +7,10 @@ $(function(){
     initSlider();
     changeSlide();
 
-    // Iniciar slider
+    // INICIANDO SLIDER
     function initSlider(){
-        $('.banner-single').hide();
-        $('.banner-single').eq(0).show(); 
+        $('.banner-single').css('opacity', 0);
+        $('.banner-single').eq(0).css('opacity', '1'); 
 
         for(var i = 0; i < maxSlide+1; i++){
             var content = $('.bullets').html();
@@ -23,15 +23,15 @@ $(function(){
         }
     }
 
-    // Animacao slide
+    // ANIMACAO SLIDER
     function changeSlide(){
         setInterval(function(){
-            $('.banner-single').eq(curSlide).stop().fadeOut(2000);
+            $('.banner-single').eq(curSlide).animate({'opacity':'0'}, 2000);
             curSlide ++;
             if(curSlide > maxSlide){
                 curSlide = 0;
             }
-            $('.banner-single').eq(curSlide).stop().fadeIn(2000);
+            $('.banner-single').eq(curSlide).animate({'opacity':'1'}, 2000);
             // trocando bullets
             $('.bullets span').removeClass('active-slider');
             $('.bullets span').eq(curSlide).addClass('active-slider');
@@ -40,12 +40,12 @@ $(function(){
 
     }
 
-    //Clicker action
+    //CLIKER ACTION
     $('body').on('click','.bullets span', function(){
         var currentBullet = $(this);
-        $('.banner-single').eq(curSlide).stop().fadeOut(1000);
+        $('.banner-single').eq(curSlide).animate({'opacity':'0'}, 2000);
         curSlide = currentBullet.index();
-        $('.banner-single').eq(curSlide).stop().fadeIn(1000);
+        $('.banner-single').eq(curSlide).animate({'opacity':'1'}, 2000);
         $('.bullets span').removeClass('active-slider');
         currentBullet.addClass('active-slider');
     })

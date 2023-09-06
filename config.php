@@ -22,7 +22,8 @@
     // DEFINIR CAMINHOS "CONSTANTES"
     define('INCLUDE_PATH', 'http://localhost/web_site/');
     define('INCLUDE_PATH_PAINEL', INCLUDE_PATH.'painel/');
-    // Conectar MySql
+
+    // Conectar MySql (BD)
     define('HOST', 'localhost');
     define('USER', 'root');
     define('PASSWORD', '');
