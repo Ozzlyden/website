@@ -27,12 +27,16 @@
 				echo 'Erro: ' . $errorInfo[2];
 				}
 
+				// LOGIN BEM SUCEDIDO
 				if($sql->rowCount() == 1){
 					$info = $sql->fetch();
-					// Login bem sucedido
+					// Session do BD
 					$_SESSION['login'] = true;
 					$_SESSION['user'] = $user;          // Guardando info na SESSION
 					$_SESSION['password'] = $password;
+					$_SESSION['img'] = $info['img'];
+					$_SESSION['nome'] = $info['nome'];
+					$_SESSION['cargo'] = $info['cargo'];
 
 					header('Location: '.INCLUDE_PATH_PAINEL);   // Mandar para o painel.php
 					die();

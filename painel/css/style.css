@@ -82,6 +82,42 @@ html,body{
 	background: #455a64;
 	float: left;
 	width: 300px;
+	padding: 10px;
+}
+
+.box-usuario{
+	text-align: center;
+
+}
+
+.avatar-usuario{
+	width: 130px;
+	height: 130px;
+	border-radius: 50%;
+	background: #445a64;
+	display: inline-block;
+	border: 3px solid #2f3d42;
+	text-align: left;
+}
+
+.avatar-usuario i {
+	color: #2f3d42;
+	font-size: 50px;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+}
+
+.nome-usuario{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.nome-usuario p{
+	color: white;
+	font-weight: normal;
 }
 
 header{
@@ -96,6 +132,19 @@ header{
 }
 
 .loggout a{
+	text-decoration: none;
 	color: white;
 	font-size: 20px;
+}
+
+.loggout a > span{
+	font-size: 17px;
+	text-decoration: none;
+}
+
+.menu-btn{
+	float: left;
+	cursor: pointer;
+	font-size: 23px;
+	color: white;
 }

@@ -22,17 +22,31 @@
 
 <div class="menu">
 
-    <?php 
+    
+    <div class="box-usuario">
         
-    ?>
+        <div class="avatar-usuario">
+             <i class="fa-regular fa-user"></i>
+        </div><!--avatar-usuario-->
+        
+        <div class="nome-usuario">
+            <p><?php echo $_SESSION['nome']; ?></p>
+            <p><?php echo pegaCargo($_SESSION['cargo']); ?> </p>
+        </div><!--nome-usuario-->
 
-</div>
+    </div><!--boc-usuario-->
+
+</div><!--menu-->
 
 <header>
 
     <div class="center">
+        <div class="menu-btn">
+            <i class="fa-solid fa-bars"></i>
+
+        </div><!--menu-btn-->
         <div class="loggout">
-            <a href="<?php echo INCLUDE_PATH_PAINEL; ?>?loggout"><i class="fa-solid fa-right-from-bracket"></i></a>
+            <a href="<?php echo INCLUDE_PATH_PAINEL; ?>?loggout"><i class="fa-solid fa-right-from-bracket"></i><span> Sair  </span></a>
         </div> <!--loggout-->
     </div><!--center-->
 

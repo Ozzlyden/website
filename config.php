@@ -28,4 +28,15 @@
     define('USER', 'root');
     define('PASSWORD', '');
     define('DATABASE','bd_website');
+
+    // FUNCOES 
+    function pegaCargo($cargo){
+        $arr =[
+            '0' => 'Normal',
+            '1' => 'Sub Administrador',
+            '2' => 'Administrador'
+        ];
+
+        return $arr[$cargo];
+    }
 ?>
