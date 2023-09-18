@@ -80,6 +80,9 @@ html,body{
 	overflow-y: auto;
 	height: 100%;
 	background: #455a64;
+	position: fixed;
+	left: 0;
+	top: 0;
 	float: left;
 	width: 300px;
 	padding: 10px;
@@ -124,7 +127,8 @@ header{
 	padding: 10px 0;
 	background: #78909c;
 	width: calc(100% - 300px);
-	float: left;
+	position: relative;
+	left: 300px;
 }
 
 .loggout{
@@ -147,4 +151,52 @@ header{
 	cursor: pointer;
 	font-size: 23px;
 	color: white;
+}
+
+/*CONTEUDO PRINCIPAL */
+
+.w100{
+	width: 100%;
+}
+
+.w50{
+	width: 49%;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.content{
+	width: calc(100% - 300px);
+	position: relative;
+	left: 300px;
+	padding: 10px;
+}
+
+.box-content{
+	background: white;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+/*MOBILE*/
+
+@media screen and (max-width: 765px){
+	.menu{
+		display: none;
+	}
+	.box-content{
+		width: 100%;
+		left: 0;
+	}
+
+	header{
+		width: 100%;
+		left: 0;
+	}
 }

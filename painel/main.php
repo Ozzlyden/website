@@ -24,11 +24,19 @@
 
     
     <div class="box-usuario">
-        
-        <div class="avatar-usuario">
-             <i class="fa-regular fa-user"></i>
+    <?php
+        if($_SESSION['img'] == ''){
+    ?>
+         <div class="avatar-usuario">
+            <i class="fa-regular fa-user"></i>
         </div><!--avatar-usuario-->
+        <?php }else { ?>
+            <div class="img-usuario">
+            <img src="<?php echo INCLUDE_PATH_PAINEL ?> upload/ <?php echo $_SESSION['img']; ?>"
+        </div><!--img-usuario-->
+    <?php } ?>    
         
+
         <div class="nome-usuario">
             <p><?php echo $_SESSION['nome']; ?></p>
             <p><?php echo pegaCargo($_SESSION['cargo']); ?> </p>
@@ -53,6 +61,29 @@
     <div class="clear"></div>
 
 </header>
+
+<div class="content">
+
+        <div class="box-content left w100">
+
+        </div> <!--box-content-->
+        
+        <!--
+        <div class="box-content left w100">
+            
+        </div> 
+
+        <div class="box-content left w50">
+            
+        </div> <
+
+        <div class="box-content right w50">
+            
+        </div> -->
+
+        <div class="clear"></div> 
+
+</div> <!--content-->
 
 <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script>
 
