@@ -22,7 +22,7 @@
 
 <div class="menu">
 
-    
+    <div class="menu-wraper">
     <div class="box-usuario">
     <?php
         if($_SESSION['img'] == ''){
@@ -41,8 +41,8 @@
             <p><?php echo $_SESSION['nome']; ?></p>
             <p><?php echo pegaCargo($_SESSION['cargo']); ?> </p>
         </div><!--nome-usuario-->
-
-    </div><!--boc-usuario-->
+    </div><!--box-usuario-->
+    </div><!--menu-wraper-->
 
 </div><!--menu-->
 
@@ -86,6 +86,8 @@
 </div> <!--content-->
 
 <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script>
+<script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
+<script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
 
 </body>
 </html>

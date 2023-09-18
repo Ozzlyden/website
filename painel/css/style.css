@@ -10,6 +10,10 @@ html,body{
     background: rgb(225, 225, 225);
 }
 
+body{
+	overflow-x: hidden;
+}
+
 /*PAGINA LOGIN*/
 .box-login{
 	box-shadow: 10px 10px 5px rgb(200,200,200);
@@ -77,6 +81,7 @@ html,body{
 }
 
 .menu{
+	overflow-x: hidden;
 	overflow-y: auto;
 	height: 100%;
 	background: #455a64;
@@ -86,6 +91,10 @@ html,body{
 	float: left;
 	width: 300px;
 	padding: 10px;
+}
+
+.menu-wraper{
+	width: 300px;
 }
 
 .box-usuario{
@@ -184,13 +193,15 @@ header{
 	margin-bottom: 10px;
 }
 
-/*MOBILE*/
+/*MOBILE RESPONSIVO*/
 
 @media screen and (max-width: 765px){
+
 	.menu{
 		display: none;
 	}
-	.box-content{
+
+	.content{
 		width: 100%;
 		left: 0;
 	}
@@ -198,5 +209,12 @@ header{
 	header{
 		width: 100%;
 		left: 0;
+	}
+}
+
+@media screen and (max-width: 400px){
+
+	.menu-wraper{
+		width: 200px;
 	}
 }
