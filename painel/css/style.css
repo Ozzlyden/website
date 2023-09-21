@@ -143,6 +143,23 @@ body{
 	-ms-transform: translate(-50%, -50%);
 }
 
+.img-usuario{
+	display: inline-block;
+	width: 130px;
+	height: 130px;
+	border: 3px solid #2f3d42;
+	border-radius: 50%;
+}
+
+.img-usuario img{
+	position: relative;
+	left: 0;
+	top: 0;
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+}
+
 .nome-usuario{
 	text-align: center;
 	margin-top: 10px;
@@ -214,6 +231,10 @@ header{
 	margin-bottom: 10px;
 }
 
+.box-content h2{
+	padding: 0 2px;
+}
+
 .box-metricas{
 	margin-top:16px;
 	padding:0 15px;
@@ -251,6 +272,19 @@ header{
 }
 
 /*MOBILE RESPONSIVO*/
+
+@media screen and (max-width: 1200px){
+	.box-metrica-single{
+		height: 100ox;
+	}
+}
+
+@media screen and (max-width: 1024px){
+	.box-metrica-single{
+		width: 100%;
+		height: auto;
+	}
+}
 
 @media screen and (max-width: 765px){
 

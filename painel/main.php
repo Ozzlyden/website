@@ -31,7 +31,7 @@
             </div><!--avatar-usuario-->
             <?php }else { ?>
             <div class="img-usuario">
-                <img src="<?php echo INCLUDE_PATH_PAINEL ?> upload/ <?php echo $_SESSION['img']; ?>">
+                <img src="<?php echo INCLUDE_PATH_PAINEL ?> uploads/ <?php echo $_SESSION['img']; ?>">
             </div><!--img-usuario-->
         <?php } ?>    
             

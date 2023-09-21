@@ -35,4 +35,25 @@ $(function(){
 		}
 	})
 
+	// Redimencionamento da janela
+	$(window).resize(function(){
+		windowSize = $(window)[0].innerWidth;
+		targetSizeMenu = (windowSize <= 400) ? 200 : 250;
+		if(windowSize <= 768){
+			$('.menu').css('width','0').css('padding','0');
+			$('.content,header').css('width','100%').css('left','0');
+			open = false;
+		}else{
+			$('.menu').animate({'width':targetSizeMenu+'px','padding':'10px 0'},function(){
+				open = true;
+			});
+
+			$('.content,header').css('width','calc(100% - 250px)');
+			$('.content,header').animate({'left':targetSizeMenu+'px'},function(){
+			open = true;
+			});
+		}
+
+	})
+
 })
