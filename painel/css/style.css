@@ -90,7 +90,7 @@ body{
 	top: 0;
 	float: left;
 	width: 300px;
-	padding: 10px;
+	padding: 10px 0;
 }
 
 .menu-wraper{
@@ -99,7 +99,28 @@ body{
 
 .box-usuario{
 	text-align: center;
+}
 
+.items-menu{
+	margin-top: 30px;
+}
+
+.items-menu h2{
+	font-weight: normal;
+	font-size: 17px;
+	background: #2F3D42;
+	color: white;
+	padding:8px;
+}
+
+.items-menu a{
+	display: block;
+	padding: 8px;
+	font-weight: 300;
+	font-size: 16px;
+	text-decoration: none;
+	color: white;
+	border-bottom: 2px solid #2F3D42;
 }
 
 .avatar-usuario{
@@ -191,6 +212,42 @@ header{
 	background: white;
 	padding: 10px;
 	margin-bottom: 10px;
+}
+
+.box-metricas{
+	margin-top:16px;
+	padding:0 15px;
+}
+
+.box-metrica-single{
+	float: left;
+	position: relative;
+	width: 33.3%;
+	background: #F4B03E;
+	border: 5px solid white;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(2){
+	background: #E05C4E;
+}
+
+.box-metricas .box-metrica-single:nth-of-type(3){
+	background: #0091ea;
+}
+
+.box-metrica-wraper{
+	padding: 10px 20px;
+	text-align: left;
+	color: white;
+}
+
+.box-metrica-wraper h2{
+	font-size: 28px;
+}
+
+.box-metrica-wraper p{
+	padding: 10px 0;
+	font-size: 26px;
 }
 
 /*MOBILE RESPONSIVO*/
