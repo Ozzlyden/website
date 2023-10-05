@@ -31,10 +31,25 @@ class Painel
         }
     }
 
+    // LISTAR USUARIOS ONLINE
     public static function listarUsuariosOnline(){
         self::limparUsuariosOnline();
         $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.online`");
         $sql->execute();
+        return $sql->fetchAll();
+    }
+
+    // TOTAL DE VISITAS AO SITE
+    public static function listarVisitas(){
+        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.visitas`");
+        $sql->execute();
+        return $sql->fetchAll();
+    }
+
+    // TOTAL DE VISITAS AO SITE HOJE
+    public static function listarVisitasHoje(){
+        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.visitas` WHERE dia = ?");
+        $sql->execute(array(date("Y-m-d")));
         return $sql->fetchAll();
     }
 

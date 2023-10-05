@@ -1,5 +1,7 @@
 <?php
     $usuariosOnline = Painel::listarUsuariosOnline();
+    $totalVisitas = Painel::listarVisitas();
+    $totalVisitasHoje = Painel::listarVisitasHoje();
 ?>
 
 <div class="box-content left w100">
@@ -15,13 +17,13 @@
         <div class="box-metrica-single">
             <div class="box-metrica-wraper">
                 <h2>Total de Visitas</h2>
-                <p>100</p>
+                <p><?php echo count($totalVisitas); ?></p>
             </div><!--box-metrica-wraper-->
         </div><!--box-metrica-singel-->
         <div class="box-metrica-single">
             <div class="box-metrica-wraper">
                 <h2>Visitas Hoje</h2>
-                <p>3</p>
+                <p><?php echo count($totalVisitasHoje); ?></p>
             </div><!--box-metrica-wraper-->
         </div><!--box-metrica-singel-->
         <div class="clear"></div>
