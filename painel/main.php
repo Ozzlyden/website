@@ -52,7 +52,7 @@ if (isset($_GET['loggout'])) {
                 <a href="">Listar Serviços</a>
                 <a href="">Listar Slides</a>
                 <h2>Administração do painel</h2>
-                <a href="">Editar Usuário</a>
+                <a href="<?php echo INCLUDE_PATH_PAINEL ?>editar-usuario">Editar Usuário</a>
                 <h2>Configuração Geral</h2>
                 <a href="">Editar Site</a>
             </div><!--items-menu-->
