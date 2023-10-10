@@ -59,7 +59,7 @@ class Painel
         $sql = MySql::conectar()->exec("DELETE FROM  `tb_admin.online` WHERE ultima_acao < '$date' - INTERVAL 1 MINUTE");
     }
 
-    // ALERTA DE SUCESSO
+    // ALERTAS
     public static function alert($tipo,$mensagem){
         if($tipo == 'sucesso'){
             echo '<div class="box-alert sucesso"><i class="fa-solid fa-check"></i>'.$mensagem.'</div>';
@@ -67,7 +67,38 @@ class Painel
         }else if($tipo == 'erro'){
             echo '<div class="box-alert erro"><i class="fa-solid fa-triangle-exclamation"></i>'.$mensagem.'</div>';
         }
+    }
 
+    // VERFICACAO DE IMAGEM PARA UPLOAD
+    public static function imagemValida($imagem){
+        if($imagem['type'] == 'image/jpeg' ||
+            $imagem['type'] == 'image/jpg' ||
+            $imagem['type'] == 'image/png'){
+
+                // Verificacao de tamanho da imagem
+                $tamanho = intval($imagem['size']/1024);
+                if($tamanho < 300){
+                    return true;
+                }else{
+                    return false;
+                }
+
+            }else{
+                return false;
+            }
+    }
+
+    // VERIFICAR QUALQUER TIPO DE ARQUIVO
+    public static function uploadFile($file){
+        if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])){
+            return $file['name'];
+        }else{
+            return false;
+        }
+    }
+
+    public static function deleteFile($file){
+        @unlink('uploads/'.$file);
     }
 
 }
