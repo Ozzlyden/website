@@ -359,6 +359,14 @@ header{
 	color: white;
 }
 
+.menu-active{
+	background: #3d4e54;	
+}
+
+.menu-active::before{
+	content: '> ';
+}
+
 /*MOBILE RESPONSIVO*/
 @media screen and (max-width: 1200px){
 	.box-metrica-single{

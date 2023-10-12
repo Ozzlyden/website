@@ -43,3 +43,32 @@ function pegaCargo($cargo)
 
     return $arr[$cargo];
 }
+
+// SELECIONAR ITEM NO MENU
+function selecionadoMenu($par){
+    //<i class="fa-solid fa-angles-right"></i>
+    $url = explode ('/',@$_GET['url'])[0];
+    if($url == $par){
+        echo 'class="menu-active"';
+    }
+}
+
+// SISTEMA DE PERMISSAO
+function verificaPermissaoMenu($permissao){
+    if($_SESSION['cargo'] >= $permissao){
+        return;
+    }else{
+        echo 'style="display:none;"';
+    }
+}
+
+function verificaPermissaoPagina($permissao){
+    if($_SESSION['cargo'] >= $permissao){
+        return;
+    }else{
+        include('painel/pages/permissao_negado.php');
+        die();
+    }
+}
+
+?>
