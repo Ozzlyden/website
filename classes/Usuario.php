@@ -11,5 +11,9 @@
             }
         }
 
+        public static function userExists($login){
+
+        }
+
     }
 ?>

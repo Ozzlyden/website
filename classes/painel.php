@@ -1,6 +1,11 @@
 <?php
 class Painel
 {
+    // Variaveis globais cargos
+    public static $cargos = [
+        '0' => 'Normal',
+        '1' => 'Sub Administrador',
+        '2' => 'Administrador'];
 
     public static function logado()
     {
