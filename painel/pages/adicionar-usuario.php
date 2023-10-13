@@ -39,8 +39,10 @@
                     }else{
                         // Cadastro do BD
                         $usuario = new Usuario();
+                        $imagem = Painel::uploadFile($imagem);
+                        $usuario->cadastrarUsuario($login, $senha, $imagem, $nome, $cargo);
+                        Painel::alert('sucesso','Cadastro do '.$login.' foi feito com sucesso');
                     }
-                Painel::alert('sucesso','Cadastro do '.$login.' foi feito com sucesso');
                 }
             }
             

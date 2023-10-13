@@ -36,7 +36,7 @@
 
 
 <div class="box-content w100">
-    <h2><i class="fa-solid fa-user-group"></i>Usuarios Online</h2>
+    <h2><i class="fa-solid fa-user-group"></i>Usuarios Online Site</h2>
     <div class="table-responsive">
         <div class="row">
             <div class="col">
@@ -49,6 +49,7 @@
         </div><!--row-->
 
         <?php 
+        $usuariosPainel = Painel::listarUsuariosPainel();
             foreach($usuariosOnline as $key => $value){
         ?>
         <div class="row">
@@ -62,4 +63,36 @@
         </div><!--row-->
         <?php } ?>
     </div><!--table-responsive-->
+</div>
+
+<div class="box-content w100">
+    <h2><i class="fa-solid fa-user-group"></i>Usuarios Online Painel</h2>
+    <div class="table-responsive">
+        <div class="row">
+            <div class="col">
+                <i class="fa-solid fa-wifi"></i><span>Nome</span>
+            </div>
+            <div class="col">
+                <i class="fa-solid fa-down-long"></i><span>Cargo</span>
+            </div>
+            <div class="clear"></div>
+        </div><!--row-->
+
+        <?php
+        
+            foreach($usuariosPainel as $key => $value){
+        ?>
+
+        <div class="row">
+            <div class="col">
+                <span><?php echo $value['user'] ?></span>
+            </div>
+            <div class="col">
+                <span><?php echo pegaCargo($value['cargo']); ?></span>
+            </div>
+            <div class="clear"></div>
+        </div><!--row-->
+        <?php } ?>
+    </div><!--table-responsive-->
+    <div class="clear"></div>
 </div>

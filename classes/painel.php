@@ -58,6 +58,13 @@ class Painel
         return $sql->fetchAll();
     }
 
+    // LISTAR USUARIOS PAINEL
+    public static function listarUsuariosPainel(){
+        $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios`");
+        $sql->execute();
+        return $sql->fetchAll();
+    }
+
     // lIMPAR USUARIOS INATIVOS 
     public static function limparUsuariosOnline(){
         $date = date('Y-m-d H:i:s');
@@ -95,8 +102,12 @@ class Painel
 
     // VERIFICAR QUALQUER TIPO DE ARQUIVO
     public static function uploadFile($file){
-        if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$file['name'])){
-            return $file['name'];
+        // Indexar quando repete o mesmo nome
+        $formatoArquivo = explode('.',$file['name']);
+        $imagemNome = uniqid().'.'.$formatoArquivo[count($formatoArquivo) - 1];
+
+        if(move_uploaded_file($file['tmp_name'],BASE_DIR_PAINEL.'/uploads/'.$imagemNome)){
+            return $imagemNome;
         }else{
             return false;
         }
