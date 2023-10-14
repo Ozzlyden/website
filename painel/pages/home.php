@@ -30,13 +30,11 @@
     </div><!--box-metrica-->
 
 </div> <!--box-content-->
-
-
 <div class="clear"></div>
 
 
 <div class="box-content w100">
-    <h2><i class="fa-solid fa-user-group"></i>Usuarios Online Site</h2>
+    <h2><i class="fa-solid fa-user-group"></i>Usuários Online Site</h2>
     <div class="table-responsive">
         <div class="row">
             <div class="col">
@@ -66,7 +64,7 @@
 </div>
 
 <div class="box-content w100">
-    <h2><i class="fa-solid fa-user-group"></i>Usuarios Online Painel</h2>
+    <h2><i class="fa-solid fa-user-group"></i>Usuários Online Painel</h2>
     <div class="table-responsive">
         <div class="row">
             <div class="col">

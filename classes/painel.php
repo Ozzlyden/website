@@ -17,6 +17,7 @@ class Painel
     {
         // VERFICACAO DE LOGGOUT
         session_destroy(); // Destruir os dados da sessao
+        setcookie('lembrar',true,time()-1,'/');     // Destruir o cook
         header('Location: ' . INCLUDE_PATH_PAINEL);
     }
 

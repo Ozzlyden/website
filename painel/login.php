@@ -1,3 +1,25 @@
+<?php 
+	// Verificacao cookie
+	if(isset($_COOKIE['lembrar'])){
+		$user = $_COOKIE['user'];
+		$password = $_COOKIE['password'];
+
+		$sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE user = ? AND password = ?");
+		$sql->execute(array($user,$password));
+		$errorInfo = $sql->errorInfo();
+		if($sql->rowCount() == 1){
+			$info = $sql->fetch();
+			$_SESSION['login'] = true;
+			$_SESSION['user'] = $user;
+			$_SESSION['password'] = $password;
+			$_SESSION['img'] = $info['img'];
+			$_SESSION['nome'] = $info['nome'];
+			$_SESSION['cargo'] = $info['cargo'];
+			header('Location: '.INCLUDE_PATH_PAINEL);   // Mandar para o painel.php
+			die();
+		}
+	}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +60,13 @@
 					$_SESSION['nome'] = $info['nome'];
 					$_SESSION['cargo'] = $info['cargo'];
 
+					// Criacao cookie
+					if(isset($_POST['lembrar'])){
+						setcookie('lembrar',true,time()+(60*60*24),'/');
+						setcookie('user',$user,time()+(60*60*24),'/');
+						setcookie('password',$password,time()+(60*60*24),'/');
+					}
+
 					header('Location: '.INCLUDE_PATH_PAINEL);   // Mandar para o painel.php
 					die();
 				}else{
@@ -52,8 +81,15 @@
         <form method="post">
             <input type="text" name="user" placeholder="login..." required>
             <input type="password" name="password" placeholder="Senha..." required>
-            <input type="submit" name="acao" value="Conectar">
-        </form>
+			<div class="form-group-login left">
+				<input type="submit" name="acao" value="Conectar">
+			</div>
+			<div class="form-group-login right">
+				<label>Lembra-me</label>
+				<input type="checkbox" name="lembrar"/>
+			</div>
+			<div class="clear"></div>
+\        </form>
     </div><!--box-login-->
 
 <script src="https://kit.fontawesome.com/0720f753f2.js" crossorigin="anonymous"></script>

@@ -59,6 +59,18 @@ body{
 	border: 0;
 }
 
+.form-group-login label{
+	font-size: 13px;
+	font-weight: 300;
+	color: black;
+	padding-right: 6px;
+}
+
+form .form-group-login:nth-of-type(2){
+	position: relative;
+	top: 10px;
+}
+
 /*BOX ERRO PAINEL*/
 .erro-box{
 	width: 100%;
