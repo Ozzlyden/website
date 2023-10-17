@@ -251,7 +251,13 @@ header{
 }
 
 /*TABELAS*/
+.wraper-table{
+	overflow-x: auto;
+}
+
 table{
+	font-weight: 300;
+	min-width: 900px;
 	width: 100%;
 	margin: 20px 0;
 	border-collapse: collapse;
@@ -288,6 +294,26 @@ a.btn.edit{
 
 a.btn.delete{
 	background: #E05C4E;
+}
+
+/*PAGINACAO*/
+.paginacao{
+	margin: 20px 0;
+	text-align: center;
+}
+
+.paginacao a{
+	font-size: 14px;
+	margin: 0 8px;
+	display: inline-block;
+	padding: 3px 4px;
+	border: 1px solid #ccc;
+	text-decoration: none;
+	color: #666;
+}
+
+.paginacao a.page-selected{
+	background: rgb(220,220,220);
 }
 
 /*BOX METRICAS*/

@@ -150,8 +150,13 @@ class Painel
     }
 
     // LISTAR TABELA
-    public static function selectAll($tabela){
-        $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
+    public static function selectAll($tabela,$start = null,$end = null){
+
+        if($start == null && $end == null){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela`");
+        }else{
+            $sql = MySql::conectar()->prepare("SELECT * FROM `$tabela` LIMIT $start,$end");
+        }
         $sql->execute();
         return $sql->fetchAll();
     }
