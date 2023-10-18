@@ -149,7 +149,7 @@ class Painel
         return $certo;
     }
 
-    // LISTAR TABELA
+    // LISTAR TABELA E SISTEMA DE PAGINACAO
     public static function selectAll($tabela,$start = null,$end = null){
 
         if($start == null && $end == null){
@@ -159,6 +159,22 @@ class Painel
         }
         $sql->execute();
         return $sql->fetchAll();
+    }
+
+    // DELETAR DEPOIMENTO
+    public static function deletar($tabela, $id=false){
+        if($id == false){
+            $sql = MySql::conectar()->prepare("DELETE FROM `$tabela`");
+        }else{
+            $sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE id = $id");
+        }
+        $sql->execute();
+    }
+
+    // REDIRECIONAMENTO DE PAGINA
+    public static function redirect($url){
+        echo '<script>location.href="'.$url.'"</script>';
+        die();
     }
 
 }
