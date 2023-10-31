@@ -59,6 +59,7 @@ $(function(){
 	// ATRIBUTO PARA DATA
 	$('[formato=data]').mask('99/99/9999');
 
+	// ATRIBUTO BOTAO DE AVISO
 	$('[actionBtn=delete]').click(function(){
 		var txt;
 		var r = confirm("Deseja excluir o registro?");
