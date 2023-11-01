@@ -296,6 +296,10 @@ a.btn.delete{
 	background: #E05C4E;
 }
 
+a.btn.order{
+	background: #0091ea;
+}
+
 /*PAGINACAO*/
 .paginacao{
 	margin: 20px 0;

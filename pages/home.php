@@ -89,34 +89,18 @@
         <div class="center">
             <div id="depoimentos" class="w50 left depoimentos-container">
             <h2 class="title">Depoimentos dos nossos clientes</h2>
+            <?php 
+                // Pegar os depoimentos do BD
+                $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.depoimentos` ORDER BY order_id ASC LIMIT 3");
+                $sql->execute();
+                $depoimentos = $sql->fetchAll();
+                foreach($depoimentos as $key => $value){
+            ?>
                 <div class="depoimentos-single">
-                    <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                        Duis aute irure dolor in reprehenderit in voluptate velit
-                        esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                        sint occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum."
-                    </p>
-                    <p class="nome-autor">Nome Cliente</p>
+                    <p class="depoimento-descricao">"<?php echo $value['depoimento']; ?>"</p>
+                    <p class="nome-autor"><?php echo $value['nome']; ?> - <?php echo $value['data']; ?></p>
                 </div>
-                <div class="depoimentos-single">
-                    <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                        officia deserunt mollit anim id est laborum."
-                    </p>
-                    <p class="nome-autor">Nome Cliente</p>
-                </div>
-                <div class="depoimentos-single">
-                    <p class="depoimento-descricao">"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna
-                        aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                        ull officia deserunt mollit anim id est laborum."
-                    </p>
-                    <p class="nome-autor">Nome Cliente</p>
-                </div>
+                <?php } ?>
             </div>
             <div id="servicos" class="w50 left servicos-container">
             <h2 class="title">Serviços</h2>
