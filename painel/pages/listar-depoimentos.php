@@ -31,6 +31,7 @@
             <?php
                 foreach($depoimentos as $key => $value){
             ?>
+            
             <tr>
                 <td><?php echo $value['nome']; ?></td>
                 <td><?php echo $value['data']; ?></td>

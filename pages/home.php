@@ -106,9 +106,15 @@
             <h2 class="title">Serviços</h2>
                 <div class="servicos">
                     <ul>
-                        <li>Serviço 1</li>
-                        <li>Serviço 2</li>
-                        <li>Serviço 3</li>
+                        <?php
+                            // Pegar os servicos do BD
+                             $sql = MySql::conectar()->prepare("SELECT * FROM `tb_site.servicos` ORDER BY order_id ASC LIMIT 3");
+                             $sql->execute();
+                            $servicos = $sql->fetchAll();
+                            foreach($servicos as $key => $value){  
+                        ?>
+                        <li><?php echo $value['servicos']; ?></li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div><!--w50-->
