@@ -4,7 +4,6 @@
     <form method="post" enctype="multipart/form-data">
 
         <?php 
-
             // SISTEMA DE CADASTRO
             if(isset($_POST['acao'])){
                 // Paramentros
@@ -20,7 +19,12 @@
                         Painel::alert('erro','O formato da imagem não aceito');
                     }else{
                         // Cadastro do BD
+                        include('../classes/lib/WideImage.php');    // o certo seria colocar no config.php
                         $imagem = Painel::uploadFile($imagem);
+
+                        // Redimencionamento usando a lib WideImagem
+                        WideImage::load('uploads/'.$imagem)->resize(100)->saveToFile('uploads/'.$imagem);   // deixando a img em 100px e mais leve
+                        
                         $arr = ['nome'=>$nome,'slide'=>$imagem,'order_id'=>'0','nome_tabela'=>'tb_site.slides'];
                         Painel::insert($arr);
                         Painel::alert('sucesso','Cadastro do Slide realizado com sucesso');

@@ -16,7 +16,7 @@ $autoload = function ($class) {
         include('classes/correios/vendor/autoload.php');
     }
 
-    include('classes/' . $class . '.php');
+    include('classes/'.$class.'.php');
 };
 
 spl_autoload_register($autoload);

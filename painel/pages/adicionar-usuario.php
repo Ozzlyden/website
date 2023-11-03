@@ -38,7 +38,12 @@
                         Painel::alert('erro','Login ja existente');
                     }else{
                         // Cadastro do BD
+                        include('../classes/lib/WideImage.php');    // o certo seria colocar no config.php
                         $usuario = new Usuario();
+
+                        // Redimencionamento usando a lib WideImagem
+                        //WideImage::load('uploads/'.$imagem)->resize(100)->saveToFile('uploads/'.$imagem);   // deixando a img em 100px e mais leve            
+
                         $imagem = Painel::uploadFile($imagem);
                         $usuario->cadastrarUsuario($login, $senha, $imagem, $nome, $cargo);
                         Painel::alert('sucesso','Cadastro do '.$login.' foi feito com sucesso');
