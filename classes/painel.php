@@ -153,38 +153,43 @@ class Painel
     }
 
     // INSERIR NOVOS DADOS
-    public static function update($arr){
+    public static function update($arr,$single = false){
         $certo = true;
         $first = false;
         $nome_tabela = $arr['nome_tabela'];
+
         $query = "UPDATE `$nome_tabela` SET ";
-        foreach ($arr as $key => $value){
+        foreach ($arr as $key => $value) {
             $nome = $key;
             $valor = $value;
-
-            if($nome == 'acao' || $nome == 'nome_tabela' || $nome == 'id'){
+            if($nome == 'acao' || $nome == 'nome_tabela' || $nome == 'id')
                 continue;
-            }
-
             if($value == ''){
                 $certo = false;
                 break;
             }
+            
             if($first == false){
                 $first = true;
                 $query.="$nome=?";
-            }else{
+            }
+            else{
                 $query.=",$nome=?";
             }
+
             $parametros[] = $value;
         }
 
         if($certo == true){
-            $parametros[] = $arr['id'];
-            $sql = MySql::conectar()->prepare($query.'WHERE id=?');
-            $sql->execute($parametros);
+            if($single == false){
+                $parametros[] = $arr['id'];
+                $sql = MySql::conectar()->prepare($query.' WHERE id=?');
+                $sql->execute($parametros);
+            }else{
+                $sql = MySql::conectar()->prepare($query);
+                $sql->execute($parametros);
+            }
         }
-
         return $certo;
     }
 
@@ -201,9 +206,15 @@ class Painel
     }
 
     // SELECIOAR ALGO ESPECIFICO
-    public static function select($table, $query, $arr){
-        $sql = MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
-        $sql->execute($arr);
+    public static function select($table, $query = '', $arr = ''){
+        if($query != false){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `$table` WHERE $query");
+            $sql->execute($arr);
+        }else{
+            $sql = MySql::conectar()->prepare("SELECT * FROM `$table`");
+            $sql->execute();
+        }
+        
         return $sql->fetch();
     }
 

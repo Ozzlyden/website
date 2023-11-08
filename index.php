@@ -1,6 +1,13 @@
-<?php include('config.php'); ?>
-<?php Site::updateUsuarioOnline(); ?>
-<?php Site::contador(); ?>
+<?php 
+    include('config.php');  // import arquivo
+    Site::updateUsuarioOnline();    
+    Site::contador(); 
+
+    // Conexao BD
+    $infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+    $infoSite->execute();
+    $infoSite = $infoSite->fetch();
+?>
 
 
 <!DOCTYPE html>
@@ -16,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!--GoogleFonts-->
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>css/style.css" />
-    <title>Web Site</title>
+    <title><?php echo $infoSite['titulo']; ?></title>
 </head>
 
 <body>

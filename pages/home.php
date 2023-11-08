@@ -20,17 +20,8 @@
     <section class="descricao-autor">  
         <div class="center">
             <div class="w50 left"> 
-                <h2>Nome Autor</h2>
-                <p>It is a long established fact that a reader will be distracted by 
-                the readable content of a page when looking at its layout. The 
-                point of using Lorem Ipsum is that it has a more-or-less normal 
-                distribution of letters, as opposed to using 'Content here, 
-                content here', making it look like readable English. Many desktop 
-                publishing packages and web page editors now use Lorem Ipsum as their 
-                default model text, and a search for 'lorem ipsum' will uncover many web
-                sites still in their infancy. Various versions have evolved over the
-                years, sometimes by accident, sometimes on purpose (injected humour and
-                the like).</p>
+                <h2><?php echo $infoSite['nome_autor']; ?></h2>
+                <p><?php echo $infoSite['descricao']; ?></p>
             </div> <!--w50-->
         <div class="w50 left">
             <img class="right" src="img/autor.jpg">
@@ -43,43 +34,19 @@
         <div class="center"> 
         <h2 class="title">Especialidades</h2>
             <div class="w33 left box-especialidade">
-                <h3><i class="fa-brands fa-css3-alt"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone1']; ?>"></i></h3>
                 <h4>CSS3</h4>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                    sint occaecat cupidatat non proident, sunt in culpa qui
-                    officia deserunt mollit anim id est laborum."
-                </p>
+                <p><?php echo $infoSite['descricao1']; ?></p>
             </div>
             <div class="w33 left box-especialidade">
-                <h3><i class="fa-brands fa-html5"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone2']; ?>"></i></h3>
                 <h4>HTML5</h4>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                    sint occaecat cupidatat non proident, sunt in culpa qui
-                    officia deserunt mollit anim id est laborum."
-                </p>
+                <p><?php echo $infoSite['descricao2']; ?></p>
             </div>
             <div class="w33 left box-especialidade">
-                <h3><i class="fa-brands fa-square-js"></i></h3>
+                <h3><i class="<?php echo $infoSite['icone3']; ?>"></i></h3>
                 <h4>JavaScript</h4>
-                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                     sed do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur
-                    sint occaecat cupidatat non proident, sunt in culpa qui
-                    officia deserunt mollit anim id est laborum."
-                </p>
+                <p><?php echo $infoSite['descricao3']; ?></p>
             </div>
         <div class="clear"></div>
         </div> <!--center-->

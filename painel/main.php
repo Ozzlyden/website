@@ -57,7 +57,7 @@ if (isset($_GET['loggout'])) {
                 <a <?php selecionadoMenu('adicionar-usuario'); ?> <?php verificaPermissaoMenu(2); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>adicionar-usuario">Adicionar Usuário</a>
                 
                 <h2>Configuração Geral</h2>
-                <a <?php selecionadoMenu('editar-site'); ?> href="">Editar Site</a>
+                <a <?php selecionadoMenu('editar-site'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>editar-site">Editar Site</a>
             </div><!--items-menu-->
         </div><!--menu-wraper-->
     </div><!--menu-->
