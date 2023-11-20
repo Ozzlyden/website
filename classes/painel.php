@@ -7,15 +7,32 @@ class Painel
         '1' => 'Sub Administrador',
         '2' => 'Administrador'];
 
+    // Aplicar substituicoes no slug
+    public static function generateSlug($str){
+        $str = mb_strtolower($str);
+        $str = preg_replace('/(â|á|ã)/', 'a', $str);
+        $str = preg_replace('/(ê|é)/', 'e', $str);
+        $str = preg_replace('/(í|Í)/', 'i', $str);
+        $str = preg_replace('/(ú)/', 'u', $str);
+        $str = preg_replace('/(ó|ô|õ|Ô)/', 'o',$str);
+        $str = preg_replace('/(_|\/|!|\?|#)/', '',$str);
+        $str = preg_replace('/( )/', '-',$str);
+        $str = preg_replace('/ç/','c',$str);
+        $str = preg_replace('/(-[-]{1,})/','-',$str);
+        $str = preg_replace('/(,)/','-',$str);
+        $str=strtolower($str);
+        return $str;
+    }
+
+    // VERIFICACAO DE LOGIN
     public static function logado()
     {
-        // VERIFICACAO DE LOGIN
         return isset($_SESSION['login']) ? true : false;   // $_SESSION armazena dados no navegador do usuario
     }
 
+     // VERFICACAO DE LOGGOUT
     public static function loggout()
     {
-        // VERFICACAO DE LOGGOUT
         session_destroy(); // Destruir os dados da sessao
         setcookie('lembrar',true,time()-1,'/');     // Destruir o cook
         header('Location: ' . INCLUDE_PATH_PAINEL);
