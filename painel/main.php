@@ -61,7 +61,7 @@ if (isset($_GET['loggout'])) {
                 
                 <h2>Gestão de Notícias</h2>
                 <a <?php selecionadoMenu('cadastrar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-categorias">Cadastras Categorias</a>
-                <a <?php selecionadoMenu('gerencia-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerencia-categorias">Gerencia Categorias</a>
+                <a <?php selecionadoMenu('gerenciar-categorias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-categorias">Gerenciar Categorias</a>
                 <a <?php selecionadoMenu('cadastrar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>cadastrar-noticias">Cadastras Notícias</a>
                 <a <?php selecionadoMenu('gerenciar-noticias'); ?> href="<?php echo INCLUDE_PATH_PAINEL ?>gerenciar-noticias">Gerencia Notícias</a>
             </div><!--items-menu-->
