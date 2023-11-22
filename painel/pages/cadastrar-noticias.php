@@ -27,7 +27,8 @@
 						'nome_tabela'=>'tb_site.noticias'
 						];
 						if(Painel::insert($arr)){
-							Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-noticia?sucesso');
+							Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-noticias?sucesso');
+							//Painel::redirect(INCLUDE_PATH_PAINEL.'cadastrar-noticia?sucesso');
 						}
 
 						//Painel::alert('sucesso','O cadastro da notícia foi realizado com sucesso!');
@@ -48,15 +49,15 @@
 		?>
 		<div class="form-group">
 		<label>Categoria:</label>
-		<select name="categoria_id">
-			<?php
-				$categorias = Painel::selectAll('tb_site.categorias');
-				foreach ($categorias as $key => $value) {
-			?>
-			<option <?php if($value['id'] == @$_POST['categoria_id']) echo 'selected'; ?> value="<?php echo $value['id'] ?>"><?php echo $value['nome']; ?></option>
-			<?php } ?>
-		</select>
-		</div>
+			<select name="categoria_id">
+				<?php
+					$categorias = Painel::selectAll('tb_site.categorias');
+					foreach ($categorias as $key => $value) {
+				?>
+				<option <?php if($value['id'] == @$_POST['categoria_id']) echo 'selected'; ?> value="<?php echo $value['id'] ?>"><?php echo $value['nome']; ?></option>
+				<?php } ?>
+			</select>
+		</div><!--form-group-->
 
 		<div class="form-group">
 			<label>Título:</label>
