@@ -17,7 +17,7 @@ $(function () {
       // Verificacao
 			if(data.sucesso){	  // var data eh o que informa sobre o envio
 				$('.overlay-loading').fadeOut();
-				$('.sucesso').fadeIn();
+				$('.sucesso').slideToggle();
 				setTimeout(function(){
 					$('.sucesso').fadeOut();
 				},3000)
