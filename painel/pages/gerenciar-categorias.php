@@ -10,6 +10,8 @@
             $imgDelete = $value['capa'];
             Painel::deleteFile($imgDelete);
         }
+        $noticias = MySql::conectar()->prepare("DELETE FROM `tb_site.noticias` WHERE categoria_id = ?");
+        $noticias->execute(array($idExcluir));
 
         Painel::redirect(INCLUDE_PATH_PAINEL.'gerenciar-categorias');
     }else if(isset($_GET['order'])){

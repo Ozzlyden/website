@@ -95,6 +95,14 @@ if (isset($_GET['loggout'])) {
     <script src="<?php echo INCLUDE_PATH ?>js/jquery.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/main.js"></script>
     <script src="<?php echo INCLUDE_PATH_PAINEL ?>js/jquery.mask.js"></script>
+    <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+    <script>
+    tinymce.init({ 
+        selector:'.tinymce',
+        plugins: "image",
+        height:300
+    });
+    </script>
 
 </body>
 

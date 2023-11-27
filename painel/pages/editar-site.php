@@ -29,7 +29,7 @@
         </div><!--form-group-->
         <div class="form-group">
             <label>Descrição:</label>
-            <textarea name="descricao"><?php echo $site['descricao']; ?></textarea>
+            <textarea class="tinymce" name="descricao"><?php echo $site['descricao']; ?></textarea>
         </div><!--form-group-->
 
         <?php

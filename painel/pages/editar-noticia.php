@@ -59,7 +59,7 @@
 
         <div class="form-group">
             <label>Conteudo:</label>
-            <textarea name="conteudo"><?php echo $noticias['conteudo']?></textarea>
+            <textarea class="tinymce" name="conteudo"><?php echo $noticias['conteudo']?></textarea>
         </div><!--form-group-->
 
         <div class="form-group">

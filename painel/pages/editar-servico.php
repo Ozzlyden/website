@@ -27,7 +27,7 @@
 
         <div class="form-group">
             <label>Serviço:</label>
-            <textarea name="servicos"><?php echo $servicos['servicos']; ?></textarea>
+            <textarea class="tinymce" name="servicos"><?php echo $servicos['servicos']; ?></textarea>
         </div><!--form-group--><div class="form-group">
            
         <div class="form-group">

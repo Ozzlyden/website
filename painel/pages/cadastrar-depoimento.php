@@ -22,7 +22,7 @@
         </div><!--form-group-->
         <div class="form-group">
             <label>Depoimento:</label>
-            <textarea name="depoimento"></textarea>
+            <textarea class="tinymce" name="depoimento"></textarea>
         </div><!--form-group--><div class="form-group">
             <label>Data:</label>
             <input formato="data" type="text" name="data"></input>

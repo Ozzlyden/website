@@ -31,7 +31,7 @@
         </div><!--form-group-->
         <div class="form-group">
             <label>Depoimento:</label>
-            <textarea name="depoimento"><?php echo $depoimento['depoimento']; ?></textarea>
+            <textarea class="tinymce" name="depoimento"><?php echo $depoimento['depoimento']; ?></textarea>
         </div><!--form-group--><div class="form-group">
             <label>Data:</label>
             <input formato="data" type="text" name="data" value="<?php echo $depoimento['data']; ?>"></input>
