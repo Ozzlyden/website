@@ -81,17 +81,22 @@
     <div class="container-principal">
         <!--Recolocando trecho do codigo em outro arquivo-->
         <?php
-        if (file_exists('pages/' . $url . '.php')) {
-            include('pages/' . $url . '.php');
-        } else {
-
-            if ($url != 'depoimentos' && $url != 'servicos') {
-                // pagina nao existe, colocar erro
-                include('pages/404.php');
-            } else {
-                include('pages/home.php');
+            if(file_exists('pages/'.$url.'.php')){
+                include('pages/'.$url.'.php');
+            }else{
+                //Podemos fazer o que quiser, pois a página não existe.
+                if($url != 'depoimentos' && $url != 'servicos'){
+                    $urlPar = explode('/',$url)[0];
+                    if($urlPar != 'noticias'){
+                    $pagina404 = true;
+                    include('pages/404.php');
+                    }else{
+                        include('pages/noticias.php');
+                    }
+                }else{
+                    include('pages/home.php');
+                }
             }
-        }
         ?>
     </div>
 

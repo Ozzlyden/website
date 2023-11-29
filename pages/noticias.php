@@ -1,5 +1,6 @@
 <?php 
-
+    $url = explode('/',$_GET['url']);
+    if(!isset($url[2])){
 ?>
 
 <section class="header-noticias">
@@ -61,12 +62,12 @@
                     veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
                     pariatur."</p>
-                <a href="<?php echo INCLUDE_PATH; ?>esportes/nome-post">Leia mais</a>
+                <a href="<?php echo INCLUDE_PATH; ?>noticias/esportes/nome-post">Leia mais</a>
             </div><!--box-single-conteudo-->
             <?php }?>
 
             <div class="paginator">
-                <a href="">1</a>
+                <a class="active-page" href="">1</a>
                 <a href="">2</a>
                 <a href="">3</a>
                 <a href="">4</a>
@@ -76,3 +77,8 @@
     </div><!--center-->
     <div class="clear"></div>
 </section><!--conteiner-portal-->
+
+<?php }else{ 
+    include('noticias_single.php');
+    }
+?>
