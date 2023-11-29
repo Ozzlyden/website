@@ -44,6 +44,35 @@
                 </div><!--autor-box-portal-->
             </div><!--box-content-sidebar-->
         </div><!--sidebar-->
+
+        <div class="conteudo-portal" >
+            <div class="header-conteudo-portal">
+                <!--<h2 > Visualizando todos os Posts</h2>-->
+                <h2>Visualizando Post em <span>Esportes</span></h2>
+            </div><!--conteudo-portal-->
+
+            <?php 
+                 for($i = 0; $i < 5; $i++){
+            ?>
+            <div class="box-single-conteudo">
+                <h2>19/09/2000 - Conheça nova comissão esportiva</h2>
+                <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur."</p>
+                <a href="<?php echo INCLUDE_PATH; ?>esportes/nome-post">Leia mais</a>
+            </div><!--box-single-conteudo-->
+            <?php }?>
+
+            <div class="paginator">
+                <a href="">1</a>
+                <a href="">2</a>
+                <a href="">3</a>
+                <a href="">4</a>
+            </div><!--paginator-->
+        </div><!--conteudo-portal-->
+
     </div><!--center-->
     <div class="clear"></div>
 </section><!--conteiner-portal-->

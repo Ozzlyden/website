@@ -502,8 +502,87 @@ section.container-portal{
     margin: 0 auto;
 }
 
+.conteudo-portal{
+    float: left;
+    width: 70%;
+    padding-left: 50px;
+}
+
+.header-conteudo-portal{
+    color: #333864;
+}
+
+.header-conteudo-portal h2{
+    font-size: 23px;
+}
+
+.header-conteudo-portal h2 > span{
+    border-top: 4px solid #333864;
+}
+
+.box-single-conteudo{
+    margin: 15px 0;
+    padding: 15px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.box-single-conteudo h2{
+    color: #646464;
+    font-weight: normal;
+    font-size: 22px;
+}
+
+.box-single-conteudo p{
+    color: #646464;
+    font-weight: normal;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.box-single-conteudo a{
+    background: #00b95c;
+    display: block;
+    width: 100px;
+    height: 30px;
+    line-height: 35px;
+    text-align: center;
+    padding: 0 3px;
+    font-size: 15px;
+    margin-top: 8px;
+    text-decoration: none;
+    color: white;
+}
+
+.paginator{
+    text-align: center;
+}
+
+.paginator a{
+    margin: 0 10px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 6px 4px;
+    border: 1px solid rgb(200, 220, 220);
+    color: rgb(100, 100, 100);
+}
+
+.paginator a.active-page{
+    background: rgb(220, 220, 220);
+}
+
 /**Responsivo**/
 @media screen and (max-width: 768px){
+
+    .conteudo-portal{
+        width: 100%; 
+        padding-left: 0;     
+    }
+
+    .sidebar{
+        width: 100%;
+        text-align: center;
+    }
+
     img{
         float: none !important;
         display: block;
