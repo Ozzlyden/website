@@ -17,30 +17,39 @@
             <div class="box-content-sidebar">
                 <h3><i class="fa-solid fa-magnifying-glass"></i> Realizar busca:</h3>
                 <form>
-                    <input type="text" name="busca" placeholder="O que deseja procurar ?" required>
-                    <input type="submit" name="acao" value="Pesquisa">
+                    <input type="text" name="parametro" placeholder="O que deseja procurar ?" required>
+                    <input type="submit" name="buscar" value="Pesquisa">
                 </form>
             </div><!--box-content-sidebar-->
             <div class="box-content-sidebar">
                 <h3><i class="fa-solid fa-list"></i> Selecione a categoria:</h3>
                 <form>
                     <select name="categoria">
-                        <option value="esportes">Esporte</option>
-                        <option value="geral">Geral</option>
+                        <?php 
+                            $categorias = MySql::conectar()->prepare("SELECT * FROM `tb_site.categorias` ORDER BY order_id ASC");
+                            $categorias->execute();
+                            $categorias = $categorias->fetchAll();
+                            foreach($categorias as $key => $value){
+                        ?>
+                        <option value="<?php echo $value['slug'] ?>"><?php echo $value['nome'] ?></option>
+                        <?php } ?>
                     </select>
                 </form>
             </div><!--box-content-sidebar-->
+
             <div class="box-content-sidebar">
                 <h3><i class="fa-regular fa-user"></i> Sobre o autor:</h3>
                 <div class="autor-box-portal">
                     <div class="box-img-autor"></div>
                     <div class="texto-autor-portal">
-                        <h3>Autor nome</h3>
-                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                             sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                              veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                               Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                pariatur."</p>
+                        <?php 
+                            $infoSite = MySql::conectar()->prepare("SELECT * FROM `tb_site.config`");
+                            $infoSite->execute();
+                            $infoSite = $infoSite->fetch();
+                            
+                        ?>
+                        <h3><?php echo $infoSite['nome_autor'] ?></h3>
+                        <p><?php echo substr($infoSite['descricao'],0,300).'...' ?></p>
                     </div><!--texto-autor-portal-->
                 </div><!--autor-box-portal-->
             </div><!--box-content-sidebar-->

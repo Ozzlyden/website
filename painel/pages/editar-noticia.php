@@ -20,7 +20,7 @@
                 $conteudo = $_POST['conteudo'];
                 $imagem = $_FILES['capa'];
                 $imagem_atual = $_POST['imagem_atual'];
-                $verifica = MySql::conectar()->prepare("SELECT `id` FROM `tb_site.noticias` WHERE titulo = ? AND categoria = ? AND id != ?");
+                $verifica = MySql::conectar()->prepare("SELECT `id` FROM `tb_site.noticias` WHERE titulo = ? AND categoria_id = ? AND id != ?");
                 $verifica->execute(array($titulo,$_POST['categoria_id'],$id));
 
                 if($verifica->rowCount() == 0){
@@ -30,7 +30,7 @@
                         Painel::deleteFile($imagem_atual);
                         $imagem = Painel::uploadFile($imagem);
                         $slug = Painel::generateSlug($titulo);
-                        $arr = ['titulo'=>$titulo,'categoria_id'=>$_POST['categoria_id'], 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug,'id'=>$id,'nome_tabela'=>'tb_site.noticias'];
+                        $arr = ['titulo'=>$titulo, 'data'=>date('Y-m-d'), 'categoria_id'=>$_POST['categoria_id'], 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug,'id'=>$id,'nome_tabela'=>'tb_site.noticias'];
                         Painel::update($arr);
                         $noticias = Painel::select('tb_site.noticias', 'id = ?', array($id));
                         Painel::alert('sucesso',' Notícia editada com sucesso');
@@ -40,7 +40,7 @@
                 }else{
                     $imagem = $imagem_atual;
                     $slug = Painel::generateSlug($titulo);
-                    $arr = ['titulo'=>$titulo, 'categoria_id'=>$_POST['categoria_id'] , 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug,'id'=>$id,'nome_tabela'=>'tb_site.noticias'];
+                    $arr = ['titulo'=>$titulo,'data'=>date('Y-m-d'), 'categoria_id'=>$_POST['categoria_id'] , 'conteudo'=>$conteudo, 'capa'=>$imagem, 'slug'=>$slug,'id'=>$id,'nome_tabela'=>'tb_site.noticias'];
                     Painel::update($arr);
                     $noticias = Painel::select('tb_site.noticias', 'id = ?', array($id));
                     Painel::alert('sucesso',' Noticia editada com sucesso');

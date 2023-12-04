@@ -22,7 +22,7 @@
 						if($verifica->rowCount() == 0){
 						$imagem = Painel::uploadFile($capa);
 						$slug = Painel::generateSlug($titulo);
-						$arr = ['categoria_id'=>$categoria_id,'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,
+						$arr = ['categoria_id'=>$categoria_id,'data'=>date('Y-m-d'),'titulo'=>$titulo,'conteudo'=>$conteudo,'capa'=>$imagem,'slug'=>$slug,
 						'order_id'=>'0',
 						'nome_tabela'=>'tb_site.noticias'
 						];
